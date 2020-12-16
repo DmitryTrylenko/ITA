@@ -1,0 +1,40 @@
+.content {
+    display: flex;
+}
+
+.dropdown, .preview {
+    flex: 1;
+}
+/*  Styles for spinners*/
+.preview::after {
+    font-size: 70px;
+    animation: ellipsis 2s steps(3) infinite;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+.line::after {
+    content: "===";
+}
+
+.dot::after {
+    content: "...";
+}
+
+.triangle::after {
+    content: "...";
+}
+
+.arrow::after {
+    content: "\27A4";
+}
+
+.dot3::after {
+    content: "...";
+}
+
+@keyframes ellipsis {
+    0% { width: 0; }
+    75% { width: 3ch; }
+    100% { width: 3ch; }
+}
