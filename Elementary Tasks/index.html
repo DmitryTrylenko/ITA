@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <script src="src/task1.js"></script>
+    <script src="src/task2.js"></script>
+    <script src="src/task3.js"></script>
+    <script src="src/task4.js"></script>
+    <script src="src/task5.js"></script>
+    <script src="src/task6.js"></script>
+    <script src="src/task7.js"></script>
+    <script src="main.js"></script>
+
+    <style>
+        .task-menu {
+            display: flex;
+            flex-direction: column;
+            font-size: 25px;
+        }
+
+        .task-menu a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Tasks</h1>
+    <div>
+        <div class="task-menu">
+            <a href="#task1">Task 1</a>
+            <a href="#task2">Task 2</a>
+            <a href="#task3">Task 3</a>
+            <a href="#task4">Task 4</a>
+            <a href="#task5">Task 5</a>
+            <a href="#task6">Task 6</a>
+            <a href="#task7">Task 7</a>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h2 id="task1">Шахматная доска</h2>
+                        <p>Вывести шахматную доску с заданными размерами высоты и ширины</p>
+                        <p>Входные параметры: длина, ширина, символ для отображения</p>
+                        <p>Выход: строка с представлением шахматной доски</p>
+                    </div>
+
+                    <form name="form1">
+                        <div>
+                            <input type="text" placeholder="num">
+                            <input type="text" placeholder="num">
+                            <input type="text" placeholder="symbol">
+                        </div>
+                        <button type="button" onclick="chessBoardRun(0)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task2">Анализ конвертов</h2>
+                        <p>Есть два конверта со сторонами (a,b) и (c,d). Требуется определить, можно ли один конверт вложить в другой. Программа должна обрабатывать ввод чисел с плавающей точкой</p>
+                        <p>Входные параметры: объекты конверт1 и конверт2</p>
+                        <p>Выход: номер конверта, если вложение возможно, 0 – если вложение невозможно</p>
+                    </div>
+
+                    <form name="form2">
+                        <div>
+                            <p>Envelope 1:</p>
+                            <input type="text" placeholder="width">
+                            <input type="text" placeholder="height">
+                        </div>
+                        <div>
+                            <p>Envelope 2:</p>
+                            <input type="text" placeholder="width">
+                            <input type="text" placeholder="height">
+                        </div>
+                        <button type="button" onclick="runEnvelopes(1)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task3">Сортировка треугольников</h2>
+                        <p>Вывести треугольники в порядке убывания их площади</p>
+                        <p>Входные параметры: массив объектов треугольник</p>
+                        <p>Выход: упорядоченный массив имён треугольников</p>
+                        <h4>Примечание:</h4>
+                        <ul>
+                            <li>Расчёт площади треугольника должен производится по формуле Герона</li>
+                            <li>Каждый треугольник определяется именами вершин и длинами его сторон</li>
+                            <li>Приложение должно обрабатывать ввод чисел с плавающей точкой</li>
+                        </ul>
+                    </div>
+
+                    <form name="form3">
+                        <div id = "triangles">
+                            <div class="triangle">
+                                <span>Triangle ABC1: </span>
+                                    <input type="text" placeholder="side A">
+                                    <input type="text" placeholder="side B">
+                                    <input type="text" placeholder="side C">
+                            </div>
+                            <div class="triangle">
+                                <span>Triangle ABC2: </span>
+                                    <input type="text" placeholder="side A">
+                                    <input type="text" placeholder="side B">
+                                    <input type="text" placeholder="side C">
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="addTriangle()">Add</button>
+                        <button type="button" onclick="runAreaOfTriangle(2)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task4">Палиндром</h2>
+                        <p>Проверить является ли число или его часть палиндромом. Например, число 1234437 не является палиндромом, но является палиндромом его часть 3443. Числа меньшие, чем 10 палиндромом не считать</p>
+                        <p>Входные параметры: число</p>
+                        <p>Выход: извлечённый из числа палиндром либо 0, если извлечение не удалось</p>
+                    </div>
+
+                    <form name="form4">
+                        <div>
+                            <input type="text" placeholder="num">
+                        </div>
+                        <button type="button"onclick="runDefinePalindrome(3)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task5">Счастливые билеты</h2>
+                        <p>Есть 2 способа подсчёта счастливых билетов:</p>
+                        <p>1. Простой — если на билете напечатано шестизначное число, и сумма первых трёх цифр равна сумме последних трёх, то этот билет считается счастливым</p>
+                        <p>Сложный — если сумма чётных цифр билета равна сумме нечётных цифр билета, то билет считается счастливым</p>
+                        <p>Определить программно какой вариант подсчёта счастливых билетов даст их большее количество на заданном интервале</p>
+                        <p>Входные параметры: объект context с полями min и max</p>
+                        <p>Выход: объект с информацией о победившем методе и количестве счастливых билетов для каждого способа подсчёта</p>
+                    </div>
+
+                    <form name="form5">
+                        <div>
+                            <input type="text" maxlength="6" placeholder="min">
+                            <input type="text" maxlength="6" placeholder="max">
+                        </div>
+                        <button type="button" onclick="runTickets(4)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task6">Числовая последовательность</h2>
+                        <p>Вывести через запятую ряд длиной n, состоящий из натуральных чисел, квадрат которых не меньше заданного m</p>
+                        <p>Входные параметры: длина и значение минимального квадрата</p>
+                        <p>Выход: строка с рядом чисел</p>
+                    </div>
+
+                    <form name="form6">
+                        <div>
+                            <input type="text" placeholder="length">
+                            <input type="text" placeholder="min">
+                        </div>
+                        <button type="button" onclick="runNumberSequence(5)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="task7">Ряд Фибоначчи для диапазона</h2>
+                        <p>Вывести все числа Фибоначчи, которые удовлетворяют переданному в функцию ограничению: находятся в указанном диапазоне, либо имеют указанную длину</p>
+                        <p>Входные параметры: объект context с полями min и max, либо с полем length</p>
+                        <p>Выход: массив чисел</p>
+                    </div>
+
+                    <form name="form7">
+                        <div>
+                            <input type="text" placeholder="min/length">
+                            <input type="text" placeholder="max">
+                        </div>
+                        <button type="button" onclick="runRangeFib(6)">Run</button>
+                    </form>
+
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
